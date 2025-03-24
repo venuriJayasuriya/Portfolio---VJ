@@ -3,13 +3,13 @@ const importLogo = (filename: string) => new URL(`./assets/${filename}`, import.
 import { Download, Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const Navigation = () => (
-  <nav className="fixed top-4 right-4 z-50">
-    <ul className="flex gap-4">
+  <nav className="fixed top-0 left-0 right-0 z-50 bg-black px-4 py-2">
+    <ul className="flex justify-center gap-4 text-sm uppercase tracking-wide overflow-x-auto whitespace-nowrap text-accent">
       {['home', 'about', 'projects', 'education', 'contact'].map((section) => (
         <li key={section}>
           <a
             href={`#${section}`}
-            className="text-accent hover:text-white text-hover uppercase text-m tracking-wider"
+            className="hover:text-white transition-colors duration-200"
           >
             {section}
           </a>
@@ -21,14 +21,14 @@ const Navigation = () => (
 
 const projects = [
   {
-    title: 'Brightkids - Kids learning app | Group Project',
-    description: 'An interactive mobile/web application designed to teach children age 3+ good manners through engaging, AI-generated stories and quizzes.',
+    title: 'BrightKids - Kids learning app | Group Project',
+    description: 'An interactive mobile application designed to teach children age 3+ good manners through engaging, AI-generated stories and quizzes.',
     tech: 'Python, Flask, Open AI Integration, Firebase, Flutter, Figma',
     logo: 'BK Logo.jpeg',
   },
   {
     title: 'A Real-time ticketing system | Individual Project',
-    description: 'Developed a real-time event ticketing platform that enables users to browse events, reserve and purchase tickets with instant availability updates.',
+    description: 'Developed a real-time event ticketing platform that enables users to browse events, reserve and purchase tickets with instant availability updates..',
     tech: 'Java, Spring Boot, React',
     logo: 'ticket.png',
   },
@@ -86,9 +86,9 @@ function App() {
     <div className="bg-primary text-white">
       <Navigation />
       
-      {/* Hero Section */}
-      <section id="home" className="section bg-primary">
-        <h1 className="font-display text-9xl md:text-10xl text-accent text-center mb-4 text-hover">
+      {/* Name Section */}
+      <section id="home" className="section bg-primary pt-20 px-4 py-8 md:px-8 md:py-28 w-full">
+        <h1 className="font-display text-5xl md:text-9xl lg:text-10xl text-accent text-center mb-4 text-hover">
           VENURI<br />JAYASURIYA
         </h1>
         <p className="text-center text-m tracking-widest uppercase text-hover">
@@ -97,10 +97,10 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="section bg-sage">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-7xl mb-8 text-hover">Get to Know Venuri</h2>
-          <p className="text-lg leading-relaxed text-hover">
+      <section id="about" className="section bg-sage px-4 py-8 md:px-8 md:py-16 w-full">
+        <div className="max-w-[width] mx-auto">
+          <h2 className="font-display text-6xl mb-8 text-hover">Get to Know Venuri</h2>
+          <p className="text-lg leading-relaxed">
             Dedicated and hardworking individual passionate about building intuitive, user-focused
             applications and solving real-world problems, looking for a challenging role to enhance
             skills and knowledge that will maximize the potential of becoming an exceptionally
@@ -110,22 +110,22 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="section bg-primary">
-        <h2 className="font-display text-7xl mb-8 text-accent text-hover">PROJECTS</h2>
+      <section id="projects" className="section bg-primary px-4 py-8 md:px-8 md:py-16 w-full">
+        <h2 className="font-display text-6xl mb-8 text-accent text-hover">PROJECTS</h2>
         <div className="projects-container overflow-x-auto">
-          <div className="flex gap-8 pb-4 min-w-max">
+          <div className="flex gap-6 pb-4 min-w-max">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="project-card bg-gradient-to-br from-accent/20 to-accent/40 p-6 rounded-lg w-80"
+                className="shrink-0 project-card bg-gradient-to-br from-accent/20 to-accent/40 p-6 rounded-lg w-72 sm:w-80"
               >
                 <img
                   src={importLogo(project.logo)}
                   alt={`${project.title} Logo`}
-                  className="w-12 h-12 object-contain mb-2 mx-auto"
+                  className="w-12 h-12 object-contain mb-3 mx-auto"
                 />
                 <h3 className="font-display text-xl mb-3 text-center">{project.title}</h3>
-                <p className="text-sm mb-4" >{project.description}</p>
+                <p className="text-sm mb-4 text-justify leading-relaxed" >{project.description}</p>
                 <p className="text-s text-accent">USED: {project.tech}</p>
               </div>
             ))}
@@ -153,14 +153,14 @@ function App() {
 
 
       {/* Education Section */}
-      <section id="education" className="section bg-sage">
-        <h2 className="font-display text-7xl mb-12 text-hover">EDUCATION</h2>
-        <div className="max-w-2xl mx-auto">
+      <section id="education" className="section bg-sage px-4 py-8 md:px-8 md:py-16 w-full">
+        <h2 className=" max-w-4xl mx-auto w-full overflow-hidden font-display text-5xl mb-12 text-hover text-accent">EDUCATION</h2>
+        <div className="max-w-2xl mx-auto flex flex-col gap-6 md:gap-10">
           <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="ml-4">
-                <h3 className="font-display text-2xl text-accent">Studying BSc (Hons) in Computer Science</h3>
+                <h3 className="font-display text-2xl text-accent">BSc (Hons) in Computer Science</h3>
                 <p className="text-m italic">University of Westminster</p>
                 <p className="text-sm text-accent/80">2023 - 2027</p>
               </div>
@@ -185,8 +185,8 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section bg-primary">
-        <h2 className="font-display text-7xl mb-12 text-accent text-hover">GET IN TOUCH</h2>
+      <section id="contact" className="section bg-primary px-4 py-8 md:px-8 md:py-16 w-full">
+        <h2 className="font-display text-6xl mb-12 text-accent text-hover">GET IN TOUCH</h2>
         <div className="max-w-xl mx-auto space-y-6">
           <div className="flex items-center gap-4 text-hover">
             <Phone className="text-accent" />
@@ -206,7 +206,7 @@ function App() {
           </div>
           <div className="flex items-center gap-4 text-hover">
             <Download className="text-accent" />
-            <a href="#" className="hover:text-accent">CV</a>
+            <a href="#" className="hover:text-accent">CV : Download my CV here</a>
           </div>
         </div>
       </section>
