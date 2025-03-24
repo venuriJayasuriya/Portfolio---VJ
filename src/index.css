@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1a1a1a;
+  --color-accent: #d4c4b5;
+  --color-sage: #6b705c;
+  --color-text: #e5e5e5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.font-display {
+  font-family: 'Bodoni Moda', serif;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.text-hover {
+  transition: all 0.2s ease;
+}
+
+.text-hover:hover {
+  transform: scale(1.05);
+}
+
+.projects-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-accent);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.25rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  transform: translateY(50%);
+}
