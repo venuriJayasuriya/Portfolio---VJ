@@ -206,7 +206,7 @@ function App() {
           </div>
           <div className="flex items-center gap-4 text-hover">
             <Download className="text-accent" />
-            <a href="#" className="hover:text-accent">CV : Download my CV here</a>
+            <a href="public/CV - Venuri Jayasuriya.pdf"  download className="hover:text-accent"> <span> CV : Download my CV here </span> </a>
           </div>
         </div>
       </section>
